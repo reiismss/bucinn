@@ -483,17 +483,13 @@ Aku sayang kamu banyak banget🥹🥹🤍 kita jalanin semuanya pelan-pelan yaah
 <script>
 
 function nextPage(id){
-
 document.querySelectorAll(".page").forEach(page=>{
 page.classList.remove("active")
 })
-
 document.getElementById("page"+id).classList.add("active")
-
 }
 
 function mulai(){
-
 let nama=document.getElementById("nama").value
 
 if(nama==""){
@@ -502,9 +498,7 @@ return
 }
 
 document.getElementById("haiNama").innerHTML="Haiii "+nama+" 💗"
-
 nextPage(2)
-
 }
 
 function ukurCinta(){
@@ -647,23 +641,23 @@ hasil.innerHTML=moodText[x]
 
 document.addEventListener("DOMContentLoaded", () => {
 
-const noBtn=document.getElementById("noBtn")
+const noBtn = document.getElementById("noBtn")
 
 if(noBtn){
-noBtn.addEventListener("mouseover",()=>{
-noBtn.style.position="absolute"
-noBtn.style.top=Math.random()*250+"px"
-noBtn.style.left=Math.random()*200+"px"
+noBtn.addEventListener("mouseover", () => {
+noBtn.style.position = "absolute"
+noBtn.style.top = Math.random() * 250 + "px"
+noBtn.style.left = Math.random() * 200 + "px"
 })
 }
 
-const gaBtn=document.getElementById("gaBtn")
+const gaBtn = document.getElementById("gaBtn")
 
 if(gaBtn){
-gaBtn.addEventListener("mouseover",()=>{
-gaBtn.style.position="absolute"
-gaBtn.style.top=Math.random()*250+"px"
-gaBtn.style.left=Math.random()*200+"px"
+gaBtn.addEventListener("mouseover", () => {
+gaBtn.style.position = "absolute"
+gaBtn.style.top = Math.random() * 250 + "px"
+gaBtn.style.left = Math.random() * 200 + "px"
 })
 }
 
