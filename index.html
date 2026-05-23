@@ -645,27 +645,27 @@ hasil.innerHTML=moodText[x]
 
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+
 const noBtn=document.getElementById("noBtn")
 
+if(noBtn){
 noBtn.addEventListener("mouseover",()=>{
-
 noBtn.style.position="absolute"
-
 noBtn.style.top=Math.random()*250+"px"
-
 noBtn.style.left=Math.random()*200+"px"
-
 })
+}
 
 const gaBtn=document.getElementById("gaBtn")
 
+if(gaBtn){
 gaBtn.addEventListener("mouseover",()=>{
-
 gaBtn.style.position="absolute"
-
 gaBtn.style.top=Math.random()*250+"px"
-
 gaBtn.style.left=Math.random()*200+"px"
+})
+}
 
 })
 
