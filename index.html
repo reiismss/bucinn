@@ -1,1 +1,675 @@
-<html><body><h1>Hello</h1></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Kamu ˃͈◡˂͈ 💗</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
+}
+
+body{
+background:linear-gradient(to bottom,#ffd6e7,#fff0f5);
+overflow:hidden;
+color:#d63384;
+}
+
+.page{
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.active{
+display:flex;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:25px;
+width:100%;
+max-width:400px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+position:relative;
+}
+
+h1{
+margin-bottom:15px;
+}
+
+p{
+margin-top:10px;
+}
+
+input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:#ffe5f0;
+margin-top:15px;
+font-size:16px;
+}
+
+button{
+padding:15px;
+border:none;
+border-radius:15px;
+background:#ff4fa3;
+color:white;
+font-size:16px;
+margin-top:15px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.full{
+width:100%;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+.popup{
+background:#ffe5f0;
+padding:15px;
+border-radius:15px;
+margin-top:15px;
+animation:fade 0.5s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.progress{
+width:100%;
+height:30px;
+background:#ffd1e6;
+border-radius:20px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.bar{
+height:100%;
+width:0%;
+background:linear-gradient(to right,#ff5fb2,#ff0080);
+line-height:30px;
+color:white;
+font-weight:bold;
+transition:1s;
+}
+
+.hasil{
+margin-top:15px;
+background:#ffe5f0;
+padding:15px;
+border-radius:15px;
+display:none;
+}
+
+.alasan{
+background:#ffe5f0;
+padding:15px;
+border-radius:15px;
+margin-top:10px;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
+margin-top:10px;
+}
+
+.love{
+position:fixed;
+top:-10px;
+animation:fall linear forwards;
+z-index:999;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<div class="card">
+
+<h1>Haiii !! 💗</h1>
+
+<p>Masukin nama kamu dulu yukk :3</p>
+
+<input type="text" id="nama" placeholder="Enter name...">
+
+<button class="full" onclick="mulai()">
+Nextt > o <
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<div class="card">
+
+<h1 id="haiNama"></h1>
+
+<div class="popup">
+Aku ada sesuatu nih buat kamu 🥺💗
+</div>
+
+<button class="full" onclick="nextPage(3)">
+Next 💕
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<div class="card">
+
+<h1>Seberapa Besar Cinta Kamu?</h1>
+
+<div class="progress">
+<div class="bar" id="bar">0%</div>
+</div>
+
+<p id="textCinta"></p>
+
+<button class="full" onclick="ukurCinta()">
+Klik aku dongg~
+</button>
+
+<button class="full" onclick="nextPage(4)">
+Next 💞
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<div class="card">
+
+<h1>Kirim Ciuman kamuu ◍˃ᵕ˂◍</h1>
+
+<h1 id="kiss">0</h1>
+
+<button class="full" onclick="cium()">
+Kirim 💗
+</button>
+
+<button class="full" onclick="nextPage(5)">
+Next 💞
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<div class="card">
+
+<h1>💌 Pesan Manis Hari Ini</h1>
+
+<p id="pesan">
+Klik pesannya yaa, ini spesial buat kamu lhoo💗
+</p>
+
+<button class="full" onclick="pesanRandom()">
+Pesan
+</button>
+
+<button class="full" onclick="nextPage(6)">
+Next 💗
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page" id="page6">
+
+<div class="card">
+
+<h1>✨ Alasan Aku Sayang Kamu</h1>
+
+<div class="alasan" onclick="toggle(this)">
+😆
+<p class="hidden">
+kamu ganteng :3
+</p>
+</div>
+
+<div class="alasan" onclick="toggle(this)">
+🕊
+<p class="hidden">
+kamu bisa ngerti soal diri aku meskipun kamu masih kiciikkk
+</p>
+</div>
+
+<div class="alasan" onclick="toggle(this)">
+😋
+<p class="hidden">
+SKILL BASKET KAMU MENGGODA!!! (Termasuk kamunya sih, malah lebih menggoda. Nyam~😝 ) 
+</p>
+</div>
+
+<div class="alasan" onclick="toggle(this)">
+🤓
+<p class="hidden">
+Sebenernya kamu itu pinter tauu kalau aku liat-liat, cuma pinternya kekubur aja... ayo tingkatin kepinteran kamu!! 
+</p>
+</div>
+
+<div class="alasan" onclick="toggle(this)">
+🐣
+<p class="hidden">
+Kamu lucuuuu, manis kalau senyumm, bikin meleleh (*ˊᗜˋ*)
+</p>
+</div>
+
+<div class="alasan" onclick="toggle(this)">
+😙
+<p class="hidden">
+kamu manja banget ke akuuu, kayak anak kecill (emang anak kecil sihh😝) 
+</p>
+</div>
+
+<div class="alasan" onclick="toggle(this)">
+🍁
+<p class="hidden">
+Kamu romantis meski blak-blakan 😆
+</p>
+</div>
+
+<button class="full" onclick="nextPage(7)">
+Next 💗
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="page" id="page7">
+
+<div class="card">
+
+<h1>Spill Mood Kamu Hari Ini ! > v <</h1>
+
+<button class="full" onclick="mood(0)">
+Seneng nihh! 😆
+</button>
+
+<button class="full" onclick="mood(1)">
+Sedih 😭
+</button>
+
+<button class="full" onclick="mood(2)">
+Capek banget 😪
+</button>
+
+<button class="full" onclick="mood(3)">
+Kangen Chie chiee 💗
+</button>
+
+<button class="full" onclick="mood(4)">
+Bete / Kesell! 😠
+</button>
+
+<button class="full" onclick="mood(5)">
+Craving Rokok :( 🚬
+</button>
+
+<button class="full" onclick="mood(6)">
+Ah!  Pengen Minum Minum 🥃
+</button>
+
+<button class="full" onclick="mood(7)">
+Banyak Masalah 🥺
+</button>
+
+<button class="full" onclick="mood(8)">
+Pusing Nih Chiee 😵‍💫
+</button>
+
+<button class="full" onclick="mood(9)">
+Bingung.. Gelisah Banget... 😟
+</button>
+
+<button class="full" onclick="mood(10)">
+Ngantukk😴
+</button>
+
+<div class="hasil" id="hasilMood"></div>
+
+<button class="full" onclick="nextPage(8)">
+Next 💗
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="page" id="page8">
+
+<div class="card">
+
+<h1>Kamu Mau Berubah Jadi Lebih Baik? 🥺</h1>
+
+<button class="full" onclick="nextPage(9)">
+YES!! 
+</button>
+
+<button id="noBtn" class="full">
+NO. 
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 9 -->
+
+<div class="page" id="page9">
+
+<div class="card">
+
+<h1>Pesan Spesial Buat Kamu Nihh! ~</h1>
+
+<p>
+Jangan terlalu keras sama diri sendiri yaahh🥺 jangan ngerokok atau minum-minum juga... ayo lebih dekat lagi sama Tuhan!! Kamu memang sama-sama hilang arah, cuma perlahan kamu bakal dituntun kembali buat balik kokk, asal kamu mau terbukaa.<br><br>
+Pelan-pelan juga gapapa kokk, aku ga buru-buruin kamu. Kamu boleh kok cerita ke aku kalau ada apa-apa, jangan ngerasa ga ada tempat cerita yaaa? ada aku kok sebagai tempat cerita kamuu🥺<br><br>
+Aku percaya kamu bisa jadi versi terbaik diri kamu💗 Proses emang ga lama, tapi kamu pasti bisa! Ayoo jangan pesimiss! Kamu harus pede kalau kamu itu bisaa! Ayo konsisten buat berubah, itu hal kecil yang paling bagus dan berguna lohhh! > o <
+</p>
+
+<button class="full" onclick="nextPage(10)">
+Next 💞
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 10 -->
+
+<div class="page" id="page10">
+
+<div class="card">
+
+<h1>💞 Sama Aku Terus Yaa?</h1>
+
+<button class="full" onclick="nextPage(11)">
+IYA HIHIHI • v •
+</button>
+
+<button id="gaBtn" class="full">
+GA! 
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 11 -->
+
+<div class="page" id="page11">
+
+<div class="card">
+
+<h1>I Really Love You Tiga Rebu Sayanggg!! ( ꈍ꒳ꈍ)</h1>
+
+<p>
+Makasih udah bertahan sejauh ini meski banyak masalahh🥺aku tau kamu beberapa kali ada momen nyerah, cape, ga sanggup, tapi kamu bisa bertahan sampai sejauh ini lohh!! ໒꒰ྀི∩˃ ᵕ ˂∩꒱ྀི১ PROUD OF YOU BOCILLL!!!<br><br>
+Semoga kita selalu baik-baik aja yaa💗 kita hadapin semuanya sama-sama okeeyyy? aku harap kita bisa jadi versi terbaik dari diri kita yaaa? kita bareng terus okeey?<br><br>
+Aku sayang kamu banyak banget🥹🥹🤍 kita jalanin semuanya pelan-pelan yaahh? LOVE YOU FOR INFINITY BABEEEE!!! 💐
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function nextPage(id){
+
+document.querySelectorAll(".page").forEach(page=>{
+page.classList.remove("active")
+})
+
+document.getElementById("page"+id).classList.add("active")
+
+}
+
+function mulai(){
+
+let nama=document.getElementById("nama").value
+
+if(nama==""){
+alert("Isi nama duluu >:(")
+return
+}
+
+document.getElementById("haiNama").innerHTML="Haiii "+nama+" 💗"
+
+nextPage(2)
+
+}
+
+function ukurCinta(){
+
+let persen=Math.floor(Math.random()*30)+70
+
+let bar=document.getElementById("bar")
+
+let text=document.getElementById("textCinta")
+
+bar.style.width=persen+"%"
+
+bar.innerHTML=persen+"%"
+
+if(persen >= 100){
+
+text.innerHTML="PERFECT LOVEE!!💗"
+
+}else if(persen >= 90){
+
+text.innerHTML="Aku sayang bangett sama kamuu 💗"
+
+}else if(persen >= 80){
+
+text.innerHTML="Kamu spesial buat akuuu😆"
+
+}else if(persen >= 70){
+
+text.innerHTML="Humm.... masih sayang kok... 🥺"
+
+}else{
+
+text.innerHTML="Yahh kecil bangett :("
+
+}
+
+}
+
+let jumlah=0
+
+function cium(){
+
+jumlah++
+
+document.getElementById("kiss").innerHTML=jumlah
+
+buatLove()
+
+}
+
+function buatLove(){
+
+const love=document.createElement("div")
+
+love.innerHTML="💗"
+
+love.classList.add("love")
+
+love.style.left=Math.random()*100+"vw"
+
+love.style.fontSize=Math.random()*20+20+"px"
+
+love.style.animationDuration=Math.random()*3+2+"s"
+
+document.body.appendChild(love)
+
+setTimeout(()=>{
+love.remove()
+},5000)
+
+}
+
+setInterval(buatLove,500)
+
+const pesan=[
+
+"Haiii, ini pesan buat kamuu :> aku harap... kamu bisa jadi versi terbaik diri kamu yaaa > v < aku seneng kalau kamu mau berubah, apalagi konsisten. Jangan moodyan yaaa... kamu jangan overthink banyak hal jugaa, itu malah bikin kamu makin sumpek loh... 🥺",
+
+"Aku tau kamu mau berusaha buat berubah, tapi saran dari aku yang paling simple itu: ubah lingkungan sekitar kamu dulu, mulai dari cara kamu bergaul sama siapa, karna dari pergaulan kamu itu tentuin loh diri kamu itu gimana. Kalau pergaulan kamu baik, kamu bisa jadi baik, begitu juga sebaliknyaa", 
+
+"Ayo jadi orang yang konsisten, mau dengar-dengaran sama orang, ambil yang positif yaa, jangan gampang judge orang juga.", 
+
+"Aku bisa ngerti kok kesusahan kamu kayak gimana, tapi kamu jangan overthink soal itu, kenapa? karna semakin kamu overthink, kamu bisa stress lohh :( doa aja yaaa mau masalah kamu kayak gimanaa, okeyyy? semua pasti ada jalannya kokk ˃͈◡˂͈", 
+
+"heyy, aku tau kok keluarga aku susah buat terima kamu, tapi semakin lama pasti mereka mau terima kamu kokk. Mereka memang protektif ke aku, merreka gampang judge kamu itu _se negatif_ itu di mata mereka. But, kamu harus *bisa buktiin kalau kamu pantes buat aku* , perjuangan itu _ga ada_ yang gampang kokk •́︿•̀ mulai dari apaa? mulai dari diri kamu sendiri—lewat cara kamu berattitude, konsistennya diri kamu, kamu tuh orangnya gimana sih baiknya, skill kamu, kedewasaan kamu, itu semua berarti lohh!"
+
+]
+
+function pesanRandom(){
+
+let random=Math.floor(Math.random()*pesan.length)
+
+document.getElementById("pesan").innerHTML=pesan[random]
+
+}
+
+function toggle(el){
+
+let p=el.querySelector("p")
+
+p.classList.toggle("hidden")
+
+}
+
+const moodText=[
+
+"WIIIHHHH!!! AKU JUGA SENENG KALAU KAMU SENENG LOHHH!! 😆💗",
+
+"Kamu kenapa sedihh? Jangan sedih sedih yaaa? ayo cerita ke aku apa yang bikin kamu sedihhh🥺",
+
+"Kamu cape kenapaa? istirahat sebentar dulu aja, refresh pikiran biar ga sumpek yaaa? minum air yang cukup jugaa, kalau bisa hangout kemana aja okeyyy? kalau udah nda cape lagi baru ke akuu > v <"
+
+"EH EHHH ADA YANG KANGEN NIHHH !!! ˃͈◡˂͈ AKU JUGA KANGEN KOKKK!! SINI SINI UMUMUMMUUUUU~~ ",
+
+"Lagi kesel yaa? Istirahat dulu aja yaaa? jangan ambil keputusan pas lagi bete / kesel. Take your time sayangg! ~ lakuin hobi atau makan ajaa biar mood kamu balikk💗 itu cuma sementara kok, jangan rusakin diri yaa buat pelampiasan", 
+
+"Ettssss, kepengen rokok itu dateng lewat gelombang otak, tahan yaaa? makan chips atau cari sesuatu yang bisa di kunyah aja yaa sebagai penggantinya 💗", 
+
+"Minuman alkohol itu ga bisa selesaiin masalah kamuu, itu cuma bikin kamu makin parah lohhh 🥺 ayo jangan minum lagii", 
+
+"Kalau banyak masalah, selesaiin satu satu duluu, jangan langsung semuanya sekaliguss. Bawa dalam doa juga yaaa? Inget, kalau kamu doa sambil curhat masalah kamu apa aja, apalagi sampai nangis, Dad J bakal tampung semua air mata kamu lohh! OoO cari kelegaan yang positif yaaa!", 
+
+"Pusing kenapa nihh? ada yang mau di ceritainn? kamu stresss? ayo minum air dulu, tarik nafas... buang pelan-pelan... kasih otak jeda bentar yaa💗", 
+
+"Bingung itu tanda kamu lagi mikir, bukan artinya kamu gagal! isokee, ayo coba lagii! ayo tentuin apa hal yang menurut kamu baikk!", 
+
+"Tidur aja kalau ngantukk, jangan paksain diri buat terus online😪😪 istirahat itu baik loh buat tubuh kamuu!"
+
+]
+
+function mood(x){
+
+let hasil=document.getElementById("hasilMood")
+
+hasil.style.display="block"
+
+hasil.innerHTML=moodText[x]
+
+}
+
+const noBtn=document.getElementById("noBtn")
+
+noBtn.addEventListener("mouseover",()=>{
+
+noBtn.style.position="absolute"
+
+noBtn.style.top=Math.random()*250+"px"
+
+noBtn.style.left=Math.random()*200+"px"
+
+})
+
+const gaBtn=document.getElementById("gaBtn")
+
+gaBtn.addEventListener("mouseover",()=>{
+
+gaBtn.style.position="absolute"
+
+gaBtn.style.top=Math.random()*250+"px"
+
+gaBtn.style.left=Math.random()*200+"px"
+
+})
+
+</script>
+
+</body>
+</html>
